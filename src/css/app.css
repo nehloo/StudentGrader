@@ -1,0 +1,270 @@
+table.tableMain {
+  text-align: center;
+  width: auto;
+  font-weight: normal;
+  min-width: 70%;
+}
+
+table th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+thead th {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 20000;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 8px 4px 12px -8px #232323;
+  -moz-box-shadow: 8px 4px 12px -8px #232323;
+  -webkit-box-shadow: 8px 4px 12px -8px #232323;
+}
+
+thead th:first-child {
+  z-index: 30000;
+  min-width: 400px;
+}
+
+thead th table {
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+  max-width: 400px;
+  min-width: 100%;
+  z-index: 90000;
+}
+
+thead th table tr {
+  background-color: #fff;
+}
+
+thead th table tr td {
+  padding: 0;
+}
+
+thead th table tr td.tdBase {
+  background-color: #4A86E8;
+  color: #A4C2F4;
+}
+
+thead th table tr th.thChoice {
+  background-color: #fff;
+  color: #000;
+}
+
+thead h1 {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+}
+
+thead p {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0;
+}
+
+.grade {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+.headerTitle {
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  background-color: #666666;
+  white-space: noWrap;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.headerTitleBase {
+  background-color: #900;
+}
+
+.tdFactor {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 10000;
+  padding: 0;
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 8px 4px 12px -8px #232323;
+  -moz-box-shadow: 8px 4px 12px -8px #232323;
+  -webkit-box-shadow: 8px 4px 12px -8px #232323;
+}
+
+.tdFactor table {
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+  max-width: 400px;
+  min-width: 100%;
+}
+
+.tdFactorTitle {
+  text-align: left;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.tdFactorTitle textarea {
+  text-align: left;
+}
+
+.list ul {
+  background-color: transparent;
+  border: 0;
+}
+
+.list {
+  border: 0;
+  overflow: hide;
+}
+
+.colImportance, .colImportanceClone {
+  background-color: #efefef;
+}
+
+input {
+  text-align: center;
+  cursor: pointer;
+  /*pointer-events: none;*/
+}
+
+.textareaStudentName {
+  height: 21px;
+  white-space: nowrap;
+  overflow: auto;
+  min-width: 75px;
+}
+
+textarea {
+  text-align: center;
+  cursor: pointer;
+}
+
+.textareaCourseTitle, .textareaAssignmentTitle, .textareaTeacherName { 
+  height: 21px;
+  width: 100%;
+  padding: 0;
+  font-weight: bold;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number]::placeholder, textarea::placeholder {
+  color: red;
+}
+
+.md .input:not(.input-outline):after {
+  background-color: transparent;
+}
+
+.headerImportance {
+  background-color: #fff;
+}
+
+.headerTitleRequirements, .headerTitleImportance, .headerTitleRequirementsClone {
+  background-color: #434343;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.headerTitleRequirementsClone {
+  display: none;
+}
+
+.colBase, .colBaseClone {
+  background-color: #c9d9f8;
+}
+
+.inputGradeCell:hover, .colImportanceHover:hover, .colBaseHover:hover, .tdFactorTitleHover:hover, .headerTitleHover:hover {
+  background-color: #FFF2CC;
+  cursor: pointer;
+}
+
+.headerTitleHover:hover {
+  background-color: #4A86E8;
+}
+
+.removeIcon {
+  display: none;
+}
+
+.removeIconHover:hover .removeIcon {
+  display: block;
+}
+
+.error {
+  color: red;
+}
+
+@media only screen and (min-width: 600px) {
+  .colBaseClone, .colImportanceClone {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .colBase, .colImportance {
+    display: none;
+  }
+  thead th:first-child {
+    min-width: 150px;
+  }
+  .inputGradeCell {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .inputGradeCell:hover {
+    background-color: #fff;
+  }
+  .colBaseClone:hover {
+    background-color: #c9d9f8;
+  }
+  .colImportanceClone:hover {
+    background-color: #efefef;
+  }
+  .tdFactorTitleHover:hover {
+    background-color: #fff;
+  }
+  .tableMain {
+    background-color: #fff;
+  }
+  .headerTitleRequirements {
+    display: none;
+  }
+  .headerTitleRequirementsClone {
+    display: block;
+  }
+  .removeIcon {
+    display: block;
+  }
+}
+
+/* temp patch for F7 high CPU load */
+/* https://github.com/framework7io/framework7/issues/2952 */
+.md .navbar a.link:before,
+.md .toolbar a.link:before,
+.md .subnavbar a.link:before,
+.md .data-table-rows-select a.link:before,
+.md .data-table-pagination a.link:before,
+.md .searchbar-disable-button:before,
+.md .searchbar .input-clear-button:before,
+.md .notification-close-button:before {
+  background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 66%, rgba(255, 255, 255, 0) 66%);
+}
