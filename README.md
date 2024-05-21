@@ -77,6 +77,8 @@ You may add Student Grader to your mobile device's Home Screen:
 
 You may add Student Grader to your Learning Management System (LMS) of your choice. Follow the instructions provided by your LMS.
 
+Add StudentGrader to Canvas and other LMS: https://www.eduappcenter.com/apps/1202
+
 ## Student Grader as Google Spreadsheet
 
 ### Step 1:
