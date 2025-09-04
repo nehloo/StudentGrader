@@ -1,4 +1,4 @@
-import Framework7 from 'framework7';
+import Framework7 from 'framework7/lite';
 
 const events = new Framework7.Events();
 

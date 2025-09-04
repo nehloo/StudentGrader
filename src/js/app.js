@@ -3,11 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Import Framework7
-import Framework7 from 'framework7';
-import 'framework7/css/bundle';
+import Framework7 from 'framework7/lite';
 
 // Import Framework7-React Plugin
-import Framework7React from 'framework7-react';
+import Framework7React from 'framework7/react';
+
+// Import main Framework7 styles
+import 'framework7/css/framework7.css';
 
 // Import Icons and App Custom Styles
 import '../css/icons.css';
