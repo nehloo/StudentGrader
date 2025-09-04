@@ -1,5 +1,5 @@
 import React from 'react';
-import { App, Panel, View } from 'framework7-react';
+import { useF7, useF7Ready, App, Panel, View } from 'framework7-react';
 
 import routes from '../js/routes';
 
@@ -75,7 +75,8 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    this.$f7ready((f7) => {
+    const f7 = useF7();
+    useF7Ready(() => {
     });
   }
 
