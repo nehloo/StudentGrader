@@ -1,5 +1,5 @@
 import React from 'react';
-import { f7, f7Ready, App, Panel, View } from 'framework7-react';
+import { f7, f7ready, App, Panel, View } from 'framework7-react';
 
 import routes from '../js/routes';
 
