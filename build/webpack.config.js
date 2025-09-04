@@ -168,10 +168,14 @@ module.exports = {
       'process.env.TARGET': JSON.stringify(target),
     }),
     ...(env === 'production' ? [
-      new OptimizeCSSPlugin({
-        cssProcessorOptions: {
-          safe: true,
-          map: { inline: false },
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
         },
       }),
       new webpack.optimize.ModuleConcatenationPlugin(),
