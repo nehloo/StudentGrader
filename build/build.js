@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const { rimraf } = require('rimraf');
-const chalk = require('chalk');
+const { cyan, yellow, red } = require('chalk');
 const config = require('./webpack.config.js');
 
 const env = process.env.NODE_ENV || 'development';
@@ -33,10 +33,11 @@ const isCordova = target === 'cordova';
       process.exit(1);
     }
 
-    console.log(chalk.cyan('  Build complete.\n'));
-    console.log(chalk.yellow(
+    console.log(cyan('  Build complete.\n'));
+    console.log(yellow(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
       '  Opening index.html over file:// won\'t work.\n'
     ));
+    console.error(red('Error message'));
   });
 })();
