@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
@@ -36,19 +36,32 @@ module.exports = {
   },
   devtool: env === 'production' ? 'source-map' : 'eval',
   devServer: {
+    host: 'localhost',
+    port: 8081,
     hot: true,
     open: true,
     compress: true,
-    contentBase: '/www/',
-    disableHostCheck: true,
-    watchOptions: {
-      poll: 1000,
+    static: {
+      directory: resolvePath('www'),
+      watch: {
+        poll: 1000,
+      },
     },
+    allowedHosts: 'all',
   },
   optimization: {
-    minimizer: [new TerserPlugin({
-      sourceMap: true,
-    })],
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+      new CssMinimizerPlugin(),
+    ],
   },
   module: {
     rules: [
@@ -165,7 +178,6 @@ module.exports = {
     ] : [
       // Development only plugins
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
     ]),
     new HtmlWebpackPlugin({
       filename: './index.html',
@@ -183,18 +195,22 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/app.css',
     }),
-    new CopyWebpackPlugin([
-      {
-        from: resolvePath('src/static'),
-        to: resolvePath('www/static'),
-      },
-      {
-        from: resolvePath('src/manifest.json'),
-        to: resolvePath('www/manifest.json'),
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolvePath('src/static'),
+          to: resolvePath('www/static'),
+        },
+        {
+          from: resolvePath('src/manifest.json'),
+          to: resolvePath('www/manifest.json'),
+        },
+      ],
+    }),
+  
     new WorkboxPlugin.InjectManifest({
       swSrc: resolvePath('src/service-worker.js'),
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
     }),
   ],
 };
