@@ -9,7 +9,7 @@ import Framework7 from 'framework7/lite/bundle';
 import Framework7React from 'framework7-react';
 
 // Import main Framework7 styles
-import 'framework7/framework7-bundle.css';
+import 'framework7/css/bundle';
 
 // Import Icons and App Custom Styles
 import '../css/icons.css';
