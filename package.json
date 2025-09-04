@@ -35,9 +35,8 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js --host localhost",
+    "build": "cross-env NODE_ENV=production node ./build/build.js",
     "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
     "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
     "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
@@ -74,6 +73,7 @@
     "babel-loader": "^10.0.0",
     "chalk": "^5.6.0",
     "copy-webpack-plugin": "^13.0.1",
+    "cpy": "^12.0.1",
     "cpy-cli": "^6.0.0",
     "cross-env": "^10.0.0",
     "css-loader": "^7.1.2",
