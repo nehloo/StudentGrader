@@ -184,8 +184,8 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
     ]),
     new HtmlWebpackPlugin({
-      filename: './index.html',
-      template: './src/index.html',
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../src/index.html'),
       inject: true,
       minify: env === 'production' ? {
         collapseWhitespace: true,
