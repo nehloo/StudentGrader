@@ -17,7 +17,7 @@ const isCordova = target === 'cordova';
   );
   spinner.start();
 
-  rm(isCordova ? './cordova/www' : './www/', (removeErr) => {
+  rimraf(isCordova ? './cordova/www' : './www/', (removeErr) => {
     if (removeErr) throw removeErr;
 
     webpack(config, (err, stats) => {
