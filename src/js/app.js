@@ -1,6 +1,6 @@
 // Import React and ReactDOM
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 // Import Framework7
 import Framework7 from 'framework7/lite/bundle';
@@ -9,7 +9,7 @@ import Framework7 from 'framework7/lite/bundle';
 import Framework7React from 'framework7-react';
 
 // Import main Framework7 styles
-import 'framework7/css/bundle';
+import 'framework7/framework7-bundle.css';
 
 // Import Icons and App Custom Styles
 import '../css/icons.css';
@@ -22,7 +22,7 @@ import App from '../components/app.jsx';
 Framework7.use(Framework7React);
 
 // Mount React App
-ReactDOM.render(
-  React.createElement(App),
-  document.getElementById('app'),
-);
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(<App />);
+
+console.log("🚀 App is loaded");
