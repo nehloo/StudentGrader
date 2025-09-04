@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const rm = require('rimraf');
+const rimraf = require('rimraf');
 const chalk = require('chalk');
 const config = require('./webpack.config.js');
 
