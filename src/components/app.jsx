@@ -87,7 +87,7 @@ export default class extends React.Component {
           <View url="/panel-right/" />
         </Panel>
 
-        <View main className="safe-areas" url="/" pushState={true} pushStateSeparator="" pushStateRoot="" />
+        <View id="main-view" main className="safe-areas" url="/" pushState={true} pushStateSeparator="" pushStateRoot="" />
 
       </App>
     )
