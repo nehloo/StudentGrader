@@ -1,7 +1,9 @@
 import React from 'react';
 import { Page, Navbar, NavLeft, NavTitle, NavRight, Button, Block, Link, Input, Icon } from 'framework7-react';
 
-import events from '../components/events'
+import events from '../components/events';
+
+console.log("Rendering HomePage!");
 
 export default class HomePage extends React.Component {
   constructor() {

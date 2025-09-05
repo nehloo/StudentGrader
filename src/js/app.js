@@ -21,6 +21,8 @@ import App from '../components/app.jsx';
 // Init F7 Vue Plugin
 Framework7.use(Framework7React);
 
+console.log('Framework7 is loaded... attempting to load the App...');
+
 // Mount React App
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);
