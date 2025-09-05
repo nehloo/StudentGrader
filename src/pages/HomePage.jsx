@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Navbar, NavLeft, NavTitle, NavRight, Button, Block, Link, Input, Icon, Row } from 'framework7-react';
+import { Page, Navbar, NavLeft, NavTitle, NavRight, Button, Block, Link, Input, Icon } from 'framework7-react';
 
 import events from '../components/events'
 
@@ -254,21 +254,21 @@ export default class HomePage extends React.Component {
                         <p className="headerTitleImportance">Importance</p>
                       </td>
                       <td width="25%" className="tdBase colBase">
-                        <Row noGap>
+                        <Block noGap>
                           <h1>A</h1>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.gradeTopGrade }</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.percentageTopGrade }%</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.scoreTopGrade }</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p className="headerTitle headerTitleBase">Top Grade</p>
-                        </Row>
+                        </Block>
                       </td>
                     </tr>
                   </tbody>
@@ -283,9 +283,9 @@ export default class HomePage extends React.Component {
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
-                        <Row noGap>
+                        <Block noGap>
                         <p className="headerTitleImportance" style={{ paddingRight:"10px", paddingLeft:"10px" }}>Importance</p>
-                        </Row>
+                        </Block>
                       </td>
                     </tr>
                   </tbody>
@@ -296,21 +296,21 @@ export default class HomePage extends React.Component {
                   <tbody>
                     <tr>
                       <td className="tdBase">
-                        <Row noGap>
+                        <Block noGap>
                           <h1>A</h1>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.gradeTopGrade }</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.percentageTopGrade }%</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p>{ this.state.scoreTopGrade }</p>
-                        </Row>
-                        <Row noGap>
+                        </Block>
+                        <Block noGap>
                           <p className="headerTitle headerTitleBase" style={{ whiteSpace:"noWrap", paddingRight:"10px", paddingLeft:"10px" }}>Top Grade</p>
-                        </Row>
+                        </Block>
                       </td>
                     </tr>
                   </tbody>
@@ -329,19 +329,19 @@ export default class HomePage extends React.Component {
                 const scoreBlue = 204 - 154 * multiplier
                 return (
                   <th key={ index } className="thChoice">
-                    <Row noGap className="grade">
+                    <Block noGap className="grade">
                       <h1>{ this.state.gradesLetters[index] || "F" }</h1>
-                    </Row>
-                    <Row noGap>
+                    </Block>
+                    <Block noGap>
                       <p style={{ backgroundColor:"rgb(" + gradeRed + ", " + gradeGreen + ", " + gradeBlue + ")" }}>{ this.state.grades[index] || "0.0" }</p>
-                    </Row>
-                    <Row noGap>
+                    </Block>
+                    <Block noGap>
                       <p style={{ backgroundColor:"rgb(" + percentageRed + ", " + percentageGreen + ", " + percentageBlue + ")" }}>{ this.state.percentages[index] || "0.0" }%</p>
-                    </Row>
-                    <Row noGap>
+                    </Block>
+                    <Block noGap>
                       <p style={{ backgroundColor:"rgb(" + scoreRed + ", " + scoreGreen + ", " + scoreBlue + ")" }}>{ this.state.scores[index] || "0" }</p>
-                    </Row>
-                    <Row noGap onClick={ (e) => this.focusInput(e) }>
+                    </Block>
+                    <Block noGap onClick={ (e) => this.focusInput(e) }>
                       <div className="headerTitle headerTitleHover">
                         <Input
                           type="textarea"
@@ -351,7 +351,7 @@ export default class HomePage extends React.Component {
                           onChange={ e => this.changeStudentNameInputValue(e, index) }
                           />
                       </div>
-                    </Row>
+                    </Block>
                   </th>
                 )})
               }
